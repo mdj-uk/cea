@@ -4,26 +4,9 @@ import { HelloWave } from "@/components/HelloWave";
 import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
-import { createStore } from "tinybase/with-schemas";
+// import { createStore } from "tinybase";
 
-const store = createStore()
-  .setValuesSchema({
-    employees: { type: "number" },
-    open: { type: "boolean", default: true },
-  })
-  .setTablesSchema({
-    pets: { species: { type: "string" } },
-    species: { price: { type: "number" } },
-  });
-
-store.setValues({ employees: 12, open: false });
-store.setTables({
-  pets: { fido: { species: "dog" } },
-  species: { dog: { price: "5" } },
-});
-
-const e = store.getValue("employees");
-console.log(e);
+// const store = createStore();
 
 export default function HomeScreen() {
   return (
